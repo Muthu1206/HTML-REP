@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://codingstella.com/wp-content/uploads/2024/01/photo1701345034.jpeg" type="image/x-icon">
+    <title>lOGIN-FORM</title>
+    <style>
+        
+.container{ 
+    background-image: url(./);
+    height: 350px;
+    width: 400px;
+    border: 2px solid lightgray;
+    margin-left: 450px;
+    margin-top: 40px;
+    background-color: lightgrey;
+
+}
+input{
+    margin-top: 20px;
+    margin-left: 32px;
+    padding: 10px;
+    width: 270px;
+    border-radius: 10px;
+}
+p{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#cbox{
+    margin-left: -80px;
+}
+button{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-left: 32px;
+    width: 300px;
+    background-color: rgb(210, 62, 62);
+    color: white;
+}
+.seconddiv{
+    height: 68px;
+    width: 402px;
+    background-color: white;
+    border: 1px solid lightgray;
+    margin-left: 450px;
+}
+#thirddiv{
+    border: 2px solid;
+    height: 10px;
+    margin-left: 0%;
+    margin-bottom: 40px;
+    background-color: rgb(210, 62, 62);
+    border: lightgray;
+}
+label{
+    display: block;
+    margin-left: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}body
+{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://t4.ftcdn.net/jpg/06/91/05/19/360_F_691051962_GFhQPOAXABmf7l706q89b2PFh6FnB1kI.jpg');
+}
+    </style>
+</head>
+<body>
+    <h2 style="color: red;text-align: center;">Login Page</h2>
+    <div class="container">
+        <form id="myform"> 
+            <!-- username -->
+             <label for="user">username*</label>
+             <input type="text" placeholder="enter your username" id="user">
+             <span id="nameerror" style="display: block;margin-left: 40px;color: red;"></span>
+                <!-- passsword -->
+                     <label for="pass">Password*</label>
+                     <input type="password" placeholder="enter your password" id="pass">
+                     <span id="passworderror" style="display: block;margin-left: 40px;color: red;"></span>
+                        <!-- button -->
+                         <input type="checkbox" id="cbox"><span style="margin-left:-110px; ">Remember me</span><br><br>
+                         <button type="submit">Login</button>
+            
+        </form>
+    </div>
+    <div class="seconddiv">
+        <p>Don't have an account?<span style="margin-left: 40px;">Forgot Password?</span></p>
+        <p id="thirddiv"></p>
+    </div>
+    <script>
+       document.getElementById("myform").addEventListener('submit',function(event){
+    event.preventDefault();//"preventdefault is used display that whn we refresh the page it goes(with our input )"
+    // "to avoid this we use the prevent default is used"
+    //username                                                                                               
+
+    var user=document.getElementById("user").value.trim();
+    document.getElementById("nameerror").textContent='';
+    //password
+    var pass=document.getElementById("pass").value.trim();
+    document.getElementById("passworderror").textContent='';
+   // if false
+    var isValid=true;
+    if(user === ''){  //"=== is used to show that same data type and same number"
+        document.getElementById("nameerror").textContent='name is required';
+        isValid=false; // "used to display the error or required message"
+    }
+    if(pass.length<8){ //"used to display the password is required  message"
+        document.getElementById("passworderror").textContent='password contains atleast 8 characters';
+        isValid=false; //"isvalid is used in the staring or ending in the function"
+    }
+
+    if(isValid){//"used to display when it is sumbited very message"
+        alert("form submitted successfully")
+    }
+
+})
+    </script>
+</body>
+</html>
+
+
+
+
+
